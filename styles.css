@@ -1,0 +1,189 @@
+
+/* Website Theme Colors */
+:root {
+    --primary: #0B1F3A;
+    --accent: #F5B82E;
+    --background: #F4F6F9;
+    --text: #222222;
+}
+
+/* Navigation Bar */
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Navigation Hover Effect */
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+body {
+    margin: 0;
+    padding-top: 90px;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+/* Hero Banner Section */
+#hero {
+    background: linear-gradient(135deg, #0B1F3A, #1E4B7A);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    margin: 20px;
+    border-radius: 12px;
+}
+
+#hero h1 {
+    font-size: 40px;
+    color: var(--accent);
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* Hero Buttons */
+#hero button {
+    background-color: var(--accent);
+    color: var(--primary);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#hero button:hover {
+    background-color: white;
+}
+
+
+/* General Section Styling */
+section {
+    padding: 25px;
+    margin: 20px;
+}
+
+/* Section Headings */
+section h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* Match Schedule Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: var(--primary);
+    color: white;
+    padding: 14px;
+}
+
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: #FFF4D6;
+}
+
+/* Guidelines Cards and Booking Summary */
+#guidelines div,
+#booking-summary div {
+    background-color: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--accent);
+}
+
+/* Booking Form */
+form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+form label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input,
+form select {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Form Button */
+form button {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
