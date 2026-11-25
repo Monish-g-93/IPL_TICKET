@@ -53,3 +53,48 @@ document.querySelectorAll(".book-btn").forEach(function(button) {
         showToast("Redirecting you to the booking form!");
     });
 });
+
+// Activity 7: Booking Summary Live Update
+
+// Get form elements
+const matchSelect = document.getElementById("match");
+const standSelect = document.getElementById("stand");
+const quantityInput = document.getElementById("quantity");
+
+// Get Booking Summary elements
+const summaryMatch = document.getElementById("summary-match");
+const summaryStand = document.getElementById("summary-stand");
+const summaryPrice = document.getElementById("summary-price");
+const summaryQuantity = document.getElementById("summary-quantity");
+const summaryTotal = document.getElementById("summary-total");
+
+// Ticket prices
+const ticketPrices = {
+    General: 1000,
+    Premium: 2000,
+    VIP: 5000
+};
+
+// Function to update Booking Summary
+function updateBookingSummary() {
+
+    let selectedMatch = matchSelect.value;
+    let selectedStand = standSelect.value;
+    let quantity = Number(quantityInput.value) || 0;
+
+    let price = ticketPrices[selectedStand] || 0;
+    let total = price * quantity;
+
+    summaryMatch.innerText = selectedMatch || "Not selected";
+    summaryStand.innerText = selectedStand || "Not selected";
+    summaryPrice.innerText = price;
+    summaryQuantity.innerText = quantity;
+    summaryTotal.innerText = total;
+
+    showToast("Booking Summary Updated!");
+}
+
+// Add change event listeners
+matchSelect.addEventListener("change", updateBookingSummary);
+standSelect.addEventListener("change", updateBookingSummary);
+quantityInput.addEventListener("input", updateBookingSummary);
