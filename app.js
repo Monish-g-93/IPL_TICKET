@@ -98,3 +98,77 @@ function updateBookingSummary() {
 matchSelect.addEventListener("change", updateBookingSummary);
 standSelect.addEventListener("change", updateBookingSummary);
 quantityInput.addEventListener("input", updateBookingSummary);
+
+// Activity 8: Hamburger Menu Toggle
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+if (menuToggle && navLinks) {
+
+    // Open and close navigation menu
+    menuToggle.addEventListener("click", function() {
+        navLinks.classList.toggle("active");
+    });
+
+    // Close menu after clicking a navigation link
+    navLinks.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
+            navLinks.classList.remove("active");
+        });
+    });
+}
+
+// Activity 8: Match Filter and Grid/List View
+
+const teamFilter = document.getElementById("teamFilter");
+const matchCards = document.querySelectorAll(".match-card");
+
+const matchContainer = document.getElementById("match-container");
+
+const gridViewBtn = document.getElementById("gridViewBtn");
+const listViewBtn = document.getElementById("listViewBtn");
+
+// Filter matches by team
+if (teamFilter) {
+    teamFilter.addEventListener("change", function() {
+
+        const selectedTeam = teamFilter.value;
+
+        matchCards.forEach(function(card) {
+
+            const teams = card.getAttribute("data-teams");
+
+            if (selectedTeam === "all" || teams.includes(selectedTeam)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+        showToast("Match Filter Updated!");
+    });
+}
+
+// Switch to Grid View
+if (gridViewBtn && matchContainer) {
+    gridViewBtn.addEventListener("click", function() {
+
+        matchContainer.classList.remove("match-list");
+        matchContainer.classList.add("match-grid");
+
+        showToast("Grid View Selected!");
+    });
+}
+
+// Switch to List View
+if (listViewBtn && matchContainer) {
+    listViewBtn.addEventListener("click", function() {
+
+        matchContainer.classList.remove("match-grid");
+        matchContainer.classList.add("match-list");
+
+        showToast("List View Selected!");
+    });
+}
